@@ -1,13 +1,18 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const mongoose = require("mongoose");
 const PopmartModel = require("./models/Popmart");
 
+//mongoose compass takes different connection url
+//take the connection from the application side 
 mongoose.connect(
   "mongodb+srv://sher:8x7_zLBH!RswEK_@cluster0.yu5pb2m.mongodb.net/?retryWrites=true&w=majority"
 );
 
 app.use(express.json());
+app.use(express.static('src'));
+app.use(cors());
 
 app.get("/", async (req, res) => {
   try {
