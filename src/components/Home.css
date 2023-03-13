@@ -10,7 +10,8 @@
 .home-selection {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-evenly;
+    margin-left: -4%;
 }
 
 
@@ -21,7 +22,7 @@
     color: lightskyblue;
     border-radius: 8px;
     padding: 0.75em 1.5em;
-    margin: 1em 1em;
+    margin: 1em 0em;
     font-size: 1.3rem;
     text-align: left;
     transition: transform 800ms;
@@ -41,13 +42,32 @@
 }
 
 .results h2 {
-    color: goldenrod;
+    color: white;
 }
 
-.results img {
+.inner-image {
+    border: 3px solid rgba(224, 141, 245, 0.753);
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    background-color: rgba(233, 155, 243, 0.301);
+    background:repeating-linear-gradient(rgba(236, 178, 188, 0.3), rgba(236, 178, 188, 0.3) 3px, rgba(233, 155, 243, 0.301) 3px, rgba(233, 155, 243, 0.301) 9px);
+    height: 100%;
+    overflow: hidden;
+    animation: pan-overlay 22s infinite linear;
+}
+
+@keyframes pan-overlay {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 0px -1000px;
+    }
+}
+
+.inner-image img {
     height: 40vh;
     width: auto;
-    /* border: 3px solid rgb(var(--primary-rgb) / 80%);
     border-radius: 1rem;
-    background-color: ; */
 }

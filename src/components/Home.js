@@ -50,6 +50,29 @@ const Home = () => {
     setPulledChar(pulledChar);
   };
 
+  // const glitchEffect = (name) => {
+  //   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  //   let iterations = 0;
+  //   const interval = setInterval(() => {
+  //     pulledChar.name = pulledChar.name.split("")
+  //     .map((letter, index) => {
+  //       if(index < iterations) {
+  //         return pulledChar.name.value[index];
+  //       }
+      
+  //       return letters[Math.floor(Math.random() * 26)]
+  //     })
+  //     .join("");
+
+  //     if (iterations >= pulledChar.name.value.length) {
+  //       clearInterval(interval);
+  //     }
+
+  //     iterations += 1/2;
+
+  //   }, 30);
+  // }
+
   return (
     <div className="home-container">
       <Carousel />
@@ -81,9 +104,12 @@ const Home = () => {
 
         {pulledChar && (
           <div className="results">
-            <h2>{pulledChar.name}</h2>
-            <p>Rarity: {pulledChar.rarity}</p>
+            {/* <p>Rarity: {pulledChar.rarity}</p> */}
+            <div className="inner-image">
             <img src={pulledChar.image} alt={pulledChar.name} />
+            {(pulledChar.rarity === 'Secret') ? (<h2 style={{color: "yellow"}}>{pulledChar.name}</h2>) :
+            <h2>{pulledChar.name}</h2>}
+            </div>
           </div>
         )}
         </div>
