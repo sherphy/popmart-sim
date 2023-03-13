@@ -1,0 +1,10 @@
+.d-block {
+    height: 30vh;
+    object-fit: fill;
+}
+
+@media screen and (min-width:768px) {
+    .d-block {
+        height: 60vh;
+    }
+}
