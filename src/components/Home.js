@@ -20,63 +20,73 @@ const Home = () => {
 
   const handleMascotSelect = (e) => {
     setSelectedMascot(e.target.value);
-  }
+  };
 
   const handleSeriesSelect = (e) => {
     setSelectedSeries(e.target.value);
   };
 
-  const seriesOptions = items.filter((item) => 
-  item.mascot === selectedMascot)
-  .reduce((acc,cur) => {
-    if (!acc.includes(cur.series)) {
-      acc.push(cur.series);
-    }
-    return acc;
-  },[])
-  .map((series) => (
-    <option key={series} value={series}>
-      {series}
-    </option>
-  ));
+  const seriesOptions = items
+    .filter((item) => item.mascot === selectedMascot)
+    .reduce((acc, cur) => {
+      if (!acc.includes(cur.series)) {
+        acc.push(cur.series);
+      }
+      return acc;
+    }, [])
+    .map((series) => (
+      <option key={series} value={series}>
+        {series}
+      </option>
+    ));
 
   const getCharacter = () => {
-   const getCharacters = items.filter((item) => item.series === selectedSeries);  
-   const getIds = getCharacters.map((char) => char._id);
-   const getRandomId = getIds[Math.floor(Math.random() * getIds.length)];
-   const pulledChar = getCharacters.find((item) => item._id === getRandomId);
-   setPulledChar(pulledChar);
+    const getCharacters = items.filter(
+      (item) => item.series === selectedSeries
+    );
+    const getIds = getCharacters.map((char) => char._id);
+    const getRandomId = getIds[Math.floor(Math.random() * getIds.length)];
+    const pulledChar = getCharacters.find((item) => item._id === getRandomId);
+    setPulledChar(pulledChar);
   };
 
   return (
-    <div className="homePage">
+    <div className="home-container">
       <Carousel />
-      <h1>SELECT MASCOT</h1>
-      <select value={selectedMascot} onChange={handleMascotSelect}>
-        <option> Select Mascot </option>
-        {Array.from(new Set(items.map((item) => item.mascot))).map((mascot) => (
-          <option key={mascot} value={mascot}>
-            {mascot}
-          </option>
-        ))}
-      </select>
+      <div className="home-body">
+      <div className="home-selection">
+        <div className="select-mascot">
+          <select value={selectedMascot} onChange={handleMascotSelect}>
+            <option> Select Mascot </option>
+            {Array.from(new Set(items.map((item) => item.mascot))).map(
+              (mascot) => (
+                <option key={mascot} value={mascot}>
+                  {mascot}
+                </option>
+              )
+            )}
+          </select>
+        </div>
+        <div className="select-series">
+          <select value={selectedSeries} onChange={handleSeriesSelect}>
+            <option> Select Series </option>
+            {seriesOptions}
+          </select>
+        </div>
 
-      <h1> SELECT SERIES </h1>
+        <div className="select-character">
+          <button onClick={getCharacter}>UNBOX!</button>
+        </div>
+        </div>
 
-      <select value={selectedSeries} onChange={handleSeriesSelect}>
-      <option> Select Series </option>
-       {seriesOptions}
-      </select>
-
-      <h1>TEST YOUR LUCK</h1>
-      <button onClick={getCharacter}>PULL</button>
-      {pulledChar && (
-  <div className="results">
-    <h2>{pulledChar.name}</h2>
-    <p>Rarity: {pulledChar.rarity}</p>
-    <img src={pulledChar.image} alt={pulledChar.name} />
-  </div>
-)}
+        {pulledChar && (
+          <div className="results">
+            <h2>{pulledChar.name}</h2>
+            <p>Rarity: {pulledChar.rarity}</p>
+            <img src={pulledChar.image} alt={pulledChar.name} />
+          </div>
+        )}
+        </div>
     </div>
   );
 };

@@ -1,5 +1,53 @@
-.homePage {
-    /* background-image: url('http://image5.sixthtone.com/image/5/33/844.jpg'); */
+.home-body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: radial-gradient(circle, rgb(245, 198, 218) 0%, rgb(181, 212, 247) 100%);
+    background-image: url("../assets/Screenshot\ 2023-03-14\ 054318.png");
+    height: 70vh;
+    width: 100vw;
 }
 
+.home-selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
 /* make images standardised */
+
+.home-selection select, button {
+    background-color: lightcyan;
+    color: lightskyblue;
+    border-radius: 8px;
+    padding: 0.75em 1.5em;
+    margin: 1em 1em;
+    font-size: 1.3rem;
+    text-align: left;
+    transition: transform 800ms;
+    border: 0;
+}
+
+.home-selection button:hover {
+    transform: scale(1.08);
+    font-weight: bold;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.results h2 {
+    color: goldenrod;
+}
+
+.results img {
+    height: 40vh;
+    width: auto;
+    /* border: 3px solid rgb(var(--primary-rgb) / 80%);
+    border-radius: 1rem;
+    background-color: ; */
+}
