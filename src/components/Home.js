@@ -75,11 +75,10 @@ const Home = () => {
       }
   
       iterations += 1 / 10;
-    }, 10);
+    }, 50);
 
     return glitchedName;
   };
-  
   
 
   return (
@@ -114,9 +113,8 @@ const Home = () => {
         {pulledChar && (
           <div className="results">
             <div className="inner-image">
-            <img src={pulledChar.image} alt={pulledChar.name} />
-            {(pulledChar.rarity === 'Secret') ? (<h2 id="secret">{glitchedName.toUpperCase()}</h2>) :
-            <h2>{glitchedName.toUpperCase()}</h2>}
+            <img key={pulledChar._id} src={pulledChar.image} alt={pulledChar.name} />
+            <h2 id={pulledChar.rarity === 'Secret' && 'secret'}>{glitchedName.toUpperCase()}</h2>
             </div>
           </div>
         )}

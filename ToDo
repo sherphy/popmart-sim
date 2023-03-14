@@ -10,3 +10,6 @@ error messages wehn never click mascot n series yet
 random mascot random series
 
 rarity change colour  
+
+issues: 
+basically my css for #secret takes hella long to load cos it re-renders the box-shadow with every name change 
