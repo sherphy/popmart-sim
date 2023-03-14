@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Glitch';
+    src: url('../assets/glitch.ttf');
+}
+
 .home-body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,13 +48,17 @@
 
 .results h2 {
     color: white;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Glitch';
+    font-size: 3rem;
 }
 
 .inner-image {
     border: 3px solid rgba(224, 141, 245, 0.753);
-    border-radius: 1rem;
+    border-radius: 2.5rem;
     padding: 1rem;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
     background-color: rgba(233, 155, 243, 0.301);
     background:repeating-linear-gradient(rgba(236, 178, 188, 0.3), rgba(236, 178, 188, 0.3) 3px, rgba(233, 155, 243, 0.301) 3px, rgba(233, 155, 243, 0.301) 9px);
     height: 100%;
@@ -70,4 +79,8 @@
     height: 40vh;
     width: auto;
     border-radius: 1rem;
+}
+
+.secret {
+    color: yellow;
 }

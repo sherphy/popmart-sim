@@ -9,6 +9,7 @@ const Home = () => {
   const [selectedMascot, setSelectedMascot] = useState("");
   const [selectedSeries, setSelectedSeries] = useState("");
   const [pulledChar, setPulledChar] = useState(null);
+  const [glitchedName, setGlitchedName] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3001/")
@@ -48,30 +49,38 @@ const Home = () => {
     const getRandomId = getIds[Math.floor(Math.random() * getIds.length)];
     const pulledChar = getCharacters.find((item) => item._id === getRandomId);
     setPulledChar(pulledChar);
+    setGlitchedName(glitchEffect(pulledChar.name));
   };
 
-  // const glitchEffect = (name) => {
-  //   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  //   let iterations = 0;
-  //   const interval = setInterval(() => {
-  //     pulledChar.name = pulledChar.name.split("")
-  //     .map((letter, index) => {
-  //       if(index < iterations) {
-  //         return pulledChar.name.value[index];
-  //       }
-      
-  //       return letters[Math.floor(Math.random() * 26)]
-  //     })
-  //     .join("");
+  //from https://www.youtube.com/watch?v=W5oawMJaXbU
+   const glitchEffect = (name) => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let iterations = 0;
+    let glitchedName = "";
+  
+    const interval = setInterval(() => {
+      glitchedName = name.split("")
+        .map((letter, index) => {
+          if (index < iterations) {
+            return name[index];
+          }
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+      setGlitchedName(glitchedName);
+  
+      if (iterations >= name.length) {
+        clearInterval(interval);
+        setGlitchedName(name); // reset the name to the original value
+      }
+  
+      iterations += 1 / 10;
+    }, 10);
 
-  //     if (iterations >= pulledChar.name.value.length) {
-  //       clearInterval(interval);
-  //     }
-
-  //     iterations += 1/2;
-
-  //   }, 30);
-  // }
+    return glitchedName;
+  };
+  
+  
 
   return (
     <div className="home-container">
@@ -107,8 +116,8 @@ const Home = () => {
             {/* <p>Rarity: {pulledChar.rarity}</p> */}
             <div className="inner-image">
             <img src={pulledChar.image} alt={pulledChar.name} />
-            {(pulledChar.rarity === 'Secret') ? (<h2 style={{color: "yellow"}}>{pulledChar.name}</h2>) :
-            <h2>{pulledChar.name}</h2>}
+            {(pulledChar.rarity === 'Secret') ? (<h2 className="secret">{glitchedName.toUpperCase()}</h2>) :
+            <h2>{glitchedName.toUpperCase()}</h2>}
             </div>
           </div>
         )}
