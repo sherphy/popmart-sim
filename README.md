@@ -9,3 +9,8 @@ mongoose.connect(
 different URL from mongoDB compass 
 
 https://www.youtube.com/watch?v=W5oawMJaXbU credit for glitch effect 
+https://codepen.io/lincohn/pen/JjPZgXw for the effect rare card name 
+blue pastel buttons from https://codepen.io/brendinventer/pen/YzwOyEr 
+top is bootstrap 
+
+2h for json etc most of the time perfecting css

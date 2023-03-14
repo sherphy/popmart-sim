@@ -113,10 +113,9 @@ const Home = () => {
 
         {pulledChar && (
           <div className="results">
-            {/* <p>Rarity: {pulledChar.rarity}</p> */}
             <div className="inner-image">
             <img src={pulledChar.image} alt={pulledChar.name} />
-            {(pulledChar.rarity === 'Secret') ? (<h2 className="secret">{glitchedName.toUpperCase()}</h2>) :
+            {(pulledChar.rarity === 'Secret') ? (<h2 id="secret">{glitchedName.toUpperCase()}</h2>) :
             <h2>{glitchedName.toUpperCase()}</h2>}
             </div>
           </div>
