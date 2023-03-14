@@ -4,12 +4,10 @@ const PopmartSchema = new mongoose.Schema({
   mascot: {
     type: 'string',
     required: true,
-    enum: ["Skullpanda", "Dimoo"]
   },
   series: {
     type: 'string',
     required: true,
-    enum: ["The Mare of Animals"],
   },
   name: {
     type:'string',

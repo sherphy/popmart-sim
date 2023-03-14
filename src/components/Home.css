@@ -83,6 +83,8 @@
     width: auto;
     border-radius: 1rem;
     animation: fadeIn ease 8s;
+    display: flex;
+    margin: 0 auto;
 }
 
 @keyframes fadeIn {
@@ -90,9 +92,13 @@
     100% {opacity:1;}
 }
 
-/* https://codepen.io/lincohn/pen/JjPZgXw */
 #secret {
     color: #FFDD43;
+}
+
+/* https://codepen.io/lincohn/pen/JjPZgXw */
+/* lol refer to my issues... */
+#secret:not(:focus) {
     transform: translateY(0);
     box-shadow:
       inset 0 0 60px whitesmoke,

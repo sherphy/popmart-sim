@@ -21,7 +21,7 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://media.thetoychronicle.com/wp-content/uploads/2022/03/POP-MART-x-Ayan-Deng-Dimoo-World-WHERE-WE-GO-Blind-Box-Series-The-Toy-Chronicle-2022-.jpg"
+          src="https://media.thetoychronicle.com/wp-content/uploads/2022/09/POP-MART-x-PDC-YUMI-PINO-JELLY-How-Are-You-Feeling-Today-Blind-Box-Series-1024x538.jpg"
           alt="Second slide"
         />
       </Carousel.Item>
