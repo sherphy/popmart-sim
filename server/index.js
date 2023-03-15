@@ -4,13 +4,12 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const PopmartModel = require("./models/Popmart");
-require('dotenv').config();
+require("dotenv").config({path: '.env'});
 
 //mongoose compass takes different connection url
 //take the connection from the application side 
 mongoose.connect(
-  // eslint-disable-next-line no-template-curly-in-string
-  "mongodb+srv://sher:${process.env.DB_PASSWORD}@cluster0.yu5pb2m.mongodb.net/?retryWrites=true&w=majority", {
+  `${process.env.DB_URL}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
