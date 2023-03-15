@@ -1,5 +1,4 @@
 //asks which to pull//
-
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Carousel from "./Carousel.js";
@@ -16,10 +15,10 @@ const Home = () => {
   //   fetch("http://localhost:3001/popmarts")
   //     .then((res) => res.json())
   //     .then((json) => {
-  //       console.log(json);
   //       setItems(json);
   //     });
   // }, []);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,7 +84,7 @@ const Home = () => {
         .join("");
       setGlitchedName(glitchedName);
   
-      if (iterations >= name.length) {
+      if (iterations >= 5) {
         clearInterval(interval);
         setGlitchedName(name); // reset the name to the original value
       }

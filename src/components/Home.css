@@ -4,7 +4,7 @@
 }
 
 .home-body {
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     background: radial-gradient(circle, rgb(245, 198, 218) 0%, rgb(181, 212, 247) 100%);
     background-image: url("../assets/Screenshot\ 2023-03-14\ 054318.png");
@@ -52,6 +52,8 @@
     margin-top: 1rem;
     font-family: 'Glitch';
     font-size: 3rem;
+    max-width: 300px;
+    word-break: normal;
 }
 
 .inner-image {
