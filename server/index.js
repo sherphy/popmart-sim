@@ -4,7 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const PopmartModel = require("./models/Popmart");
-require("dotenv").config({path: '.env.local'});
+require("dotenv").config();
 
 const db = process.env.DB_URL;
 //mongoose compass takes different connection url
