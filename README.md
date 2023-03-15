@@ -14,3 +14,5 @@ blue pastel buttons from https://codepen.io/brendinventer/pen/YzwOyEr
 top is bootstrap 
 
 2h for json etc most of the time perfecting css
+
+.env v troublesome for vercel and render 
