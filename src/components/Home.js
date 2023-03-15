@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Carousel from "./Carousel.js";
+import axios from "axios";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -11,13 +12,27 @@ const Home = () => {
   const [pulledChar, setPulledChar] = useState(null);
   const [glitchedName, setGlitchedName] = useState("");
 
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setItems(json);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:3001/")
-      .then((res) => res.json())
-      .then((json) => {
-        setItems(json);
-      });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('/');
+        setItems(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
   }, []);
+  
 
   const handleMascotSelect = (e) => {
     setSelectedMascot(e.target.value);
