@@ -4,12 +4,13 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const PopmartModel = require("./models/Popmart");
-require("dotenv").config({path: '.env'});
+require("dotenv").config({path: '.env.local'});
 
+const db = process.env.DB_URL;
 //mongoose compass takes different connection url
 //take the connection from the application side 
 mongoose.connect(
-  `${process.env.DB_URL}`, {
+  `${db}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
@@ -39,5 +40,6 @@ app.post("/create", async (req,res) => {
 app.listen(3001, () => {
   console.log("server is running on port 3001");
 });
+
 
 module.exports = app;
