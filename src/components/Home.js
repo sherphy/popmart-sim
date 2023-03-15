@@ -24,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://popmart-sim-api.vercel.app/popmarts');
+        const response = await axios.get('https://popmart-sim-api.onrender.com/popmarts');
         setItems(response.data);
         console.log(response.data);
       } catch (error) {
