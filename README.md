@@ -15,4 +15,4 @@ top is bootstrap
 
 2h for json etc most of the time perfecting css
 
-.env v troublesome for vercel and render, must remember add env variables in render, and vercel no clue why its bugging out. tried CI = false for env variables
+.env v troublesome for vercel and render, must remember add env variables in render, and vercel no clue why its bugging out. tried CI = false for env variables finally did npm audit fix --force works now 

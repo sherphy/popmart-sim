@@ -8,7 +8,7 @@
     background: radial-gradient(circle, rgb(245, 198, 218) 0%, rgb(181, 212, 247) 100%);
     background-image: url("../assets/Screenshot\ 2023-03-14\ 054318.png");
     width: 100vw;
-    height: 75vh;
+    height: 73vh;
 }
 
 .home-selection {
@@ -52,14 +52,14 @@
     font-family: 'Glitch';
     font-size: 3rem;
     max-width: 300px;
-    word-break: normal;
 }
 
 .inner-image {
     border: 3px solid rgba(224, 141, 245, 0.753);
     /* border: 3px solid rgba(75, 73, 73, 0.623); */
     border-radius: 2.5rem;
-    padding: 1rem;
+    padding: 1rem 1rem 0rem 1rem;
+    margin-top: 0.5rem;
     background-color: rgba(233, 155, 243, 0.301);
     background:repeating-linear-gradient(rgba(236, 178, 188, 0.3), rgba(236, 178, 188, 0.3) 3px, rgba(233, 155, 243, 0.301) 3px, rgba(233, 155, 243, 0.301) 9px);
     /* background-color: grey; */
