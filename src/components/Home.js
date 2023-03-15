@@ -13,9 +13,10 @@ const Home = () => {
   const [glitchedName, setGlitchedName] = useState("");
 
   // useEffect(() => {
-  //   fetch("http://localhost:3001/")
+  //   fetch("http://localhost:3001/popmarts")
   //     .then((res) => res.json())
   //     .then((json) => {
+  //       console.log(json);
   //       setItems(json);
   //     });
   // }, []);
@@ -23,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/');
+        const response = await axios.get('https://popmart-sim-api.vercel.app/popmarts');
         setItems(response.data);
         console.log(response.data);
       } catch (error) {

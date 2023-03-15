@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(express.static('src'));
 app.use(cors());
 
-app.get("/", async (req, res) => {
+app.get("/popmarts", async (req, res) => {
   try {
     //getting schema
     const popmarts = await PopmartModel.find({});
