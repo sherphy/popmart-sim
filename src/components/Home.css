@@ -27,7 +27,7 @@
     border-radius: 8px;
     padding: 0.1em 0.2em;
     margin: 1em 0em;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: left;
     transition: transform 800ms;
     border: 0;
@@ -48,10 +48,10 @@
 .results h2 {
     color: white;
     text-align: center;
-    margin-top: 1rem;
     font-family: 'Glitch';
     font-size: 3rem;
     max-width: 300px;
+    margin: 1rem auto 0.2rem auto;
 }
 
 .inner-image {

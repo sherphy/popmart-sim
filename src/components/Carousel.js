@@ -32,6 +32,13 @@ function ControlledCarousel() {
           alt="Third slide"
         />
       </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://media.karousell.com/media/photos/products/2021/11/20/pucky_monster_babies_halloween_1637387784_66b08d25.jpg"
+          alt="Fourth slide"
+        />
+      </Carousel.Item>
     </Carousel>
   );
 }
