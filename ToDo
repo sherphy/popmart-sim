@@ -3,12 +3,10 @@ basically my css for #secret takes hella long to load cos it re-renders the box-
 
 banner easily select mascot n series
 pull restarts 
-sort by alphabetical
 footer series suggestions + inventory : contains what pulled + money spent (
     chars that pulled b4 album 
 setPulledChar prolly change to array 
 ) 
-error messages wehn never click mascot n series yet
 random mascot random series
 
 

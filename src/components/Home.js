@@ -25,7 +25,6 @@ const Home = () => {
       try {
         const response = await axios.get('https://popmart-sim-api.onrender.com/popmarts');
         setItems(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -50,6 +49,7 @@ const Home = () => {
       }
       return acc;
     }, [])
+    .sort()
     .map((series) => (
       <option key={series} value={series}>
         {series}
@@ -57,6 +57,14 @@ const Home = () => {
     ));
 
   const getCharacter = () => {
+    if (selectedMascot === "" && selectedSeries === "") {
+      alert("Please select a mascot and series");
+      return;
+    }
+    else if (selectedSeries === "") {
+      alert("Please select a series");
+      return;
+    }
     const getCharacters = items.filter(
       (item) => item.series === selectedSeries
     );
@@ -104,7 +112,7 @@ const Home = () => {
         <div className="select-mascot">
           <select value={selectedMascot} onChange={handleMascotSelect}>
             <option> Select Mascot </option>
-            {Array.from(new Set(items.map((item) => item.mascot))).map(
+            {Array.from(new Set(items.map((item) => item.mascot))).sort().map(
               (mascot) => (
                 <option key={mascot} value={mascot}>
                   {mascot}
