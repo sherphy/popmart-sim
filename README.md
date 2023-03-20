@@ -1,12 +1,7 @@
-SERVER-SIDE: 
-app.use(express.static('src'));
-app.use(cors()); 
+i will clean this up later! 
 
-mongoose.connect(
-  "mongodb+srv://sher:pw@cluster0.yu5pb2m.mongodb.net/?retryWrites=true&w=majority"
-);
-
-different URL from mongoDB compass 
+WEBSITE: https://popmart-sim.vercel.app/ 
+API: https://popmart-sim-api.onrender.com/popmarts
 
 https://www.youtube.com/watch?v=W5oawMJaXbU credit for glitch effect 
 https://codepen.io/lincohn/pen/JjPZgXw for the effect rare card name 
