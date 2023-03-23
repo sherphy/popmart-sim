@@ -1,8 +1,7 @@
-i will clean this up later! 
-
 WEBSITE: https://popmart-sim.vercel.app/ 
 API: https://popmart-sim-api.onrender.com/popmarts
 
+Inspiration: 
 https://www.youtube.com/watch?v=W5oawMJaXbU credit for glitch effect 
 https://codepen.io/lincohn/pen/JjPZgXw for the effect rare card name 
 blue pastel buttons from https://codepen.io/brendinventer/pen/YzwOyEr 
