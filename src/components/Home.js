@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Carousel from "./Carousel.js";
-import axios from "axios";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -11,26 +10,26 @@ const Home = () => {
   const [pulledChar, setPulledChar] = useState(null);
   const [glitchedName, setGlitchedName] = useState("");
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/popmarts")
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       setItems(json);
-  //     });
-  // }, []);
-
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://popmart-sim-api.onrender.com/popmarts');
-        setItems(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
+    fetch("http://localhost:3001/api/popmarts")
+      .then((res) => res.json())
+      .then((json) => {
+        setItems(json);
+      });
   }, []);
+
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('https://popmart-sim-api.onrender.com/popmarts');
+  //       setItems(response.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
   
 
   const handleMascotSelect = (e) => {

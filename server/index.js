@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -17,10 +18,16 @@ mongoose.connect(
 );
 
 app.use(bodyParser.json());
-app.use(express.static('src'));
 app.use(cors());
 
-app.get("/popmarts", async (req, res) => {
+//to connect static frontend
+app.use(express.static(path.join(__dirname, '..', 'build')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+});
+
+app.get("/api/popmarts", async (req, res) => {
   try {
     //getting schema
     const popmarts = await PopmartModel.find({});
@@ -30,7 +37,7 @@ app.get("/popmarts", async (req, res) => {
   }
 });
 
-app.post("/create", async (req,res) => {
+app.post("/api/create", async (req,res) => {
     const popmart = req.body;
     const newPopmart = new PopmartModel(popmart);
     await newPopmart.save();
@@ -42,4 +49,4 @@ app.listen(3001, () => {
 });
 
 
-module.exports = app;
+module.exports = app; 
