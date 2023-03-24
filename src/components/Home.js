@@ -13,6 +13,8 @@ const Home = () => {
   useEffect(() => {
     fetch("https://popmart-sim-api.onrender.com/api/popmarts")
       .then((res) => res.json())
+      // .then(data => console.log(data))
+      // .catch(err => console.error(err))
       .then((json) => {
         setItems(json);
       });
