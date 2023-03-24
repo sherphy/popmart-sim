@@ -28,17 +28,17 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.thetoychronicle.com/wp-content/uploads/2022/11/SKULLPANDA-x-POP-MART-The-Warmth-Blind-Box-Series-.jpg"
+          src="../assets/pucky_monster_babies_halloween_1637387784_66b08d25.jpg"
           alt="Third slide"
         />
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           className="d-block w-100"
           src="https://media.karousell.com/media/photos/products/2021/11/20/pucky_monster_babies_halloween_1637387784_66b08d25.jpg"
           alt="Fourth slide"
         />
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
   );
 }
