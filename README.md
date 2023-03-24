@@ -25,3 +25,5 @@ Refused to load the font 'data:font/truetype;charset=utf-8;base64, because it vi
 
   lol at that self * 
 
+When you call fetch("/api/popmarts") in your React code, it sends an HTTP GET request to your API to get a JSON response. However, since you're also serving your React app from the same server, the server is sending back the HTML file instead of the JSON response.
+

@@ -28,7 +28,7 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../assets/pucky_monster_babies_halloween_1637387784_66b08d25.jpg"
+          src="https://www.thetoychronicle.com/wp-content/uploads/2022/11/SKULLPANDA-x-POP-MART-The-Warmth-Blind-Box-Series-.jpg"
           alt="Third slide"
         />
       </Carousel.Item>

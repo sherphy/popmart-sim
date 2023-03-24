@@ -23,10 +23,6 @@ app.use(cors());
 //to connect static frontend
 app.use(express.static(path.join(__dirname, '../build')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
-
 app.get("/api/popmarts", async (req, res) => {
   try {
     //getting schema
@@ -43,6 +39,10 @@ app.post("/api/create", async (req,res) => {
     await newPopmart.save();
     res.json(popmart);
 })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
 
 app.listen(3001, () => {
   console.log("server is running on port 3001");
