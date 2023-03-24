@@ -11,7 +11,7 @@ const Home = () => {
   const [glitchedName, setGlitchedName] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/popmarts")
+    fetch("/api/popmarts")
       .then((res) => res.json())
       .then((json) => {
         setItems(json);
