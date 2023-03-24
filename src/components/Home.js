@@ -11,7 +11,7 @@ const Home = () => {
   const [glitchedName, setGlitchedName] = useState("");
 
   useEffect(() => {
-    fetch("/api/popmarts")
+    fetch("https://popmart-sim-api.onrender.com/api/popmarts")
       .then((res) => res.json())
       .then((json) => {
         setItems(json);
