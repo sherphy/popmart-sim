@@ -20,9 +20,6 @@ mongoose.connect(
 app.use(bodyParser.json());
 app.use(cors());
 
-//to connect static frontend
-app.use(express.static(path.join(__dirname, '../build')));
-
 app.get("/api/popmarts", async (req, res) => {
   try {
     //getting schema
@@ -40,7 +37,8 @@ app.post("/api/create", async (req,res) => {
     res.json(popmart);
 })
 
-app.get('*', (req, res) => {
+app.use(express.static(path.join(__dirname, '../build')));
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
